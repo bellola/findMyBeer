@@ -53,3 +53,20 @@ export const fetchPlaces = () => {
     })
   return promise
 }
+
+export const deletePlaces = (id) => {
+    const promise = new Promise((resolve, reject) => {
+        db.transaction(tx => {
+            tx.executeSql(`DELTE FROM places WHERE id=${id}`,
+            [],
+            (_, result) => {
+                resolve(result)
+            },
+            (_, err) => {
+                reject(err)
+            }
+            )
+        })
+    })
+  return promise
+}

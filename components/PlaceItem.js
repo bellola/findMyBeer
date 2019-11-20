@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, Image, TouchableOpacity, Button} from 'react-native'
 
 
 const PlaceItem = props => {
@@ -9,6 +9,7 @@ const PlaceItem = props => {
             <View style={styles.infoContainer}>
             <Text style={styles.title}>{props.title}</Text>
             <Text style={styles.address}>{props.address}</Text>
+            <Button title='delete' style={styles.delete}/>
             </View>
         </TouchableOpacity>
     )
@@ -46,6 +47,11 @@ const styles = StyleSheet.create({
     address:{
         color: '#666',
         fontSize: 16
+    },
+    delete:{
+        marginColor: 'red',
+        backgroundColor: 'red'
+
     }
 
 })
